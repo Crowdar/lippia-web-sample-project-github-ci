@@ -4,14 +4,15 @@ name: Workflow Web Manual
 on:
   workflow_dispatch:
     inputs:
-      filter:
-        description: 'Filter type'
+      test_tag:
+        description: 'Test Tag'
         required: true
         default: 'warning'
         type: choice
         options:
         - '@Smoke'
         - '@Success'
+        
       test_type:
         description: 'Test type'
         required: true
@@ -29,13 +30,17 @@ on:
       language:
         description: 'Language used to test against'
         required: true
-        default: '@EN'
-        
+        default: '@EN'        
 
 jobs:
   testing:
     runs-on: ubuntu-latest
     container: crowdar/lippia:3.1.2.2
+    env:
+      TAG: ${{ inputs.filter }}
+      TESTTYPE: ${{ inputs.testtype }}
+      BROWSERTYPE: '${{ github.event.inputs.browser_type }}'
+      LANG: '${{ github.event.inputs.language }}'
     
     steps:
     - uses: actions/checkout@v3
@@ -44,11 +49,6 @@ jobs:
                 $LANG
                 $BROWSERTYPE
     - run: mvn clean test -P$TESTTYPE -P$BROWSERTYPE -Dcucumber.tags="--tags $TAG"
-      env:
-          TAG: ${{ inputs.filter }}
-          TESTTYPE: ${{ inputs.testtype }}
-          BROWSERTYPE: '${{ github.event.inputs.flutter_version }}'
-          LANG: '${{ github.event.inputs.language }}'
        
     - uses: actions/upload-artifact@v3
       with:
