@@ -37,8 +37,8 @@ jobs:
     runs-on: ubuntu-latest
     container: crowdar/lippia:3.1.2.2
     env:
-      TAG: ${{ inputs.filter }}
-      TESTTYPE: ${{ inputs.testtype }}
+      TAG: '${{ github.event.inputs.test_tag }}'
+      TESTTYPE: '${{ github.event.inputs.test_type }}'
       BROWSERTYPE: '${{ github.event.inputs.browser_type }}'
       LANG: '${{ github.event.inputs.language }}'
     
@@ -46,7 +46,7 @@ jobs:
     - uses: actions/checkout@v3
     - run: echo $TAG,
                 $TESTTYPE,
-                $LANG
+                $LANG,
                 $BROWSERTYPE
     - run: mvn clean test -P$TESTTYPE -P$BROWSERTYPE -Dcucumber.tags="--tags $TAG"
        
