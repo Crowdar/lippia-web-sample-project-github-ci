@@ -24,9 +24,8 @@ on:
         description: 'Browser type'
         required: true
         default: 'warning'
-        type: choice
-        options:
-        - chromeHeadless
+        type: environment
+
       language:
         description: 'Language used to test against'
         required: true
