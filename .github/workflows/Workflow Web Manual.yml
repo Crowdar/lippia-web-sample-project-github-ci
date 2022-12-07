@@ -54,6 +54,7 @@ jobs:
           TAG: ${{ inputs.filter }}
           TESTTYPE: ${{ inputs.testtype }}
           LANG: ${{ inputs.language }}
+          BROWSERTYPE: ${{ inputs.browsertype }}
 
     - uses: actions/upload-artifact@v3
       with:
