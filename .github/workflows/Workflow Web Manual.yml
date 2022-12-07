@@ -54,12 +54,9 @@ jobs:
           LANG: ${{ inputs.language }}
           
     - name: Set Flutter version
-      uses: subosito/flutter-action@v2.2.0
-        
+      uses: subosito/flutter-action@v2.2.0 
       with:
-        flutter-version: '${{ github.event.inputs.flutter_version }}
-
-
+       flutter-version: '${{ github.event.inputs.flutter_version }}
     - uses: actions/upload-artifact@v3
       with:
         path: target/extent-reports/
