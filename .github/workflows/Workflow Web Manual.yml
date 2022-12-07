@@ -47,8 +47,8 @@ jobs:
       env:
           TAG: ${{ inputs.filter }}
           TESTTYPE: ${{ inputs.testtype }}
-          browser-type: '${{ github.event.inputs.flutter_version }}'
-          language: '${{ github.event.inputs.language }}'
+          BROWSERTYPE: '${{ github.event.inputs.flutter_version }}'
+          LANG: '${{ github.event.inputs.language }}'
        
     - uses: actions/upload-artifact@v3
       with:
