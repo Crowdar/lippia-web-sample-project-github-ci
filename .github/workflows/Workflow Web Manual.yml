@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       test_tag:
-        description: 'Test Tag'
+        description: 'Tag del test'
         required: true
         default: 'warning'
         type: choice
@@ -14,7 +14,7 @@ on:
         - '@Success'
         
       test_type:
-        description: 'Test type'
+        description: 'Tipo de test'
         required: true
         default: 'warning'
         type: choice
@@ -23,12 +23,12 @@ on:
         - Secuencial
         
       browser_type:
-        description: 'Browser Type'
+        description: 'Tipo de Browser'
         required: true
         default: 'chromeHeadless'
       
       language:
-        description: 'Language used to test against'
+        description: 'Idioma'
         required: true
         default: '@EN'        
 
@@ -44,12 +44,15 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
-    - run: echo $TAG,
+    - name: valores de las variables de entorno
+      run: echo $TAG,
                 $TESTTYPE,
                 $LANG,
                 $BROWSERTYPE
-    - run: mvn clean test -P$TESTTYPE -P$BROWSERTYPE -Dcucumber.tags="--tags $TAG"
+    - name: Realizando Pruebas
+      run: mvn clean test -P$TESTTYPE -P$BROWSERTYPE -Dcucumber.tags="--tags $TAG"
        
-    - uses: actions/upload-artifact@v3
+    - name: Subiendo informe
+      uses: actions/upload-artifact@v3
       with:
         path: target/report/
