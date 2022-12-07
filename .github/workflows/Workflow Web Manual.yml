@@ -21,7 +21,7 @@ on:
         - Secuencial
         - parallel
       browsertype:
-        description: 'Test type'
+        description: 'Browser type'
         required: true
         default: 'warning'
         type: choice
