@@ -1,0 +1,60 @@
+name: Workflow Web Manual
+
+
+on:
+  workflow_dispatch:
+    inputs:
+      filter:
+        description: 'Filter type'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - '@Success'
+        - '@Smoke'
+      testtype:
+        description: 'Test type'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - Secuencial
+        - parallel
+      browsertype:
+        description: 'Test type'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - chromeHeadless
+      language:
+        description: 'Language used to test against'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - '@EN'
+        - '@ES'
+        
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    container: crowdar/lippia:3.1.2.2
+    
+    steps:
+    - uses: actions/checkout@v3
+    - run: |   #el "|" dice que se van a ejecutar multiples comandos
+          echo "Filter type: $TAG"
+          echo "testtype: $TESTTYPE"
+          echo "browsertype: $BROWSERTYPE
+          echo "Environment: $LANG"
+    - run: mvn clean test -P$TESTTYPE -P$BROWSERTYPE -Dcucumber.tags="--tags $TAG"
+      env:
+          TAG: ${{ inputs.filter }}
+          TESTTYPE: ${{ inputs.testtype }}
+          LANG: ${{ inputs.language }}
+
+    - uses: actions/upload-artifact@v3
+      with:
+        path: target/extent-reports/
