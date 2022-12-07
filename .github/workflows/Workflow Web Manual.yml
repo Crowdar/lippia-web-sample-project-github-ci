@@ -44,11 +44,10 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
-    - run: |   #el "|" dice que se van a ejecutar multiples comandos
-          echo "Filter type: "$TAG
-          echo "testtype: "$TESTTYPE
-          echo "browsertype: "$BROWSERTYPE
-          echo "Environment: "$LANG
+    - run: echo $TAG,
+                $TESTTYPE,
+                $LANG
+                $BROWSERTYPE
     - run: mvn clean test -P$TESTTYPE -P$BROWSERTYPE -Dcucumber.tags="--tags $TAG"
       env:
           TAG: ${{ inputs.filter }}
