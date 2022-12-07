@@ -1,0 +1,36 @@
+image: crowdar/lippia:3.2.1.1
+
+services:
+  - crowdar/lippia:3.2.1.1
+stages:
+  - Test
+
+Testing:
+  stage: Test
+  before_script:
+    - echo "$TAG"
+    - echo "$TESTTYPE"
+    - echo "$LANG"
+    - echo "$CI_COMMIT_MESSAGE"
+  artifacts:
+    when: always
+    paths:
+      - target/report/
+     
+  script:
+    - mvn clean test -P$TESTTYPE -P$BROWSERTYPE -Dcucumber.tags="--tags $TAG"
+
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master" || $CI_COMMIT_BRANCH == "main"'
+      variables:
+        TAG: "@Smoke"
+        TESTTYPE: parallel
+        BROWSERTYPE: chromeHeadless
+        LANG: "@EN"
+
+
+    - if: '$CI_COMMIT_BRANCH != "master" && $CI_COMMIT_BRANCH != "main"'
+      when: manual
+
+
+
