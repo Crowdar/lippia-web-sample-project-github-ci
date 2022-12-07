@@ -2,7 +2,7 @@ name: Workflow Web Auto
 
 on: 
  push:
-  branches: [ '!main', '!master' ]
+  branches: [ 'main', 'master' ]
 
 jobs:
   
@@ -24,4 +24,4 @@ jobs:
     - run: mvn clean test -P$TESTTYPE -P$BROWSERTYPE -Dcucumber.tags="--tags $TAG"
     - uses: actions/upload-artifact@v3
       with:
-        path: target/extent-reports/
+        path: target/report/
