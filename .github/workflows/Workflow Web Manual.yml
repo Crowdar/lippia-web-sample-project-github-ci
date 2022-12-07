@@ -10,30 +10,26 @@ on:
         default: 'warning'
         type: choice
         options:
-        - '@Success'
         - '@Smoke'
+        - '@Success'
       test_type:
         description: 'Test type'
         required: true
         default: 'warning'
         type: choice
         options:
-        - Secuencial
         - parallel
+        - Secuencial
         
       browser_type:
         description: 'Browser Type'
         required: true
         default: 'chromeHeadless'
-
+      
       language:
         description: 'Language used to test against'
         required: true
-        default: 'warning'
-        type: choice
-        options:
-        - '@EN'
-        - '@ES'
+        default: '@EN'
         
 
 jobs:
@@ -52,7 +48,7 @@ jobs:
           TAG: ${{ inputs.filter }}
           TESTTYPE: ${{ inputs.testtype }}
           browser-type: '${{ github.event.inputs.flutter_version }}'
-          LANG: ${{ inputs.language }}
+          language: '${{ github.event.inputs.language }}'
        
     - uses: actions/upload-artifact@v3
       with:
