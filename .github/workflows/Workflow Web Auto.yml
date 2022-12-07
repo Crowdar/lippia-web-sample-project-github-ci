@@ -2,7 +2,7 @@ name: Workflow Web Auto
 
 on: 
  push:
-  branches: [ 'main', 'master' ]
+  branches: [ '!main', '!master' ]
 
 jobs:
   
