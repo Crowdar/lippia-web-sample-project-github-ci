@@ -20,11 +20,11 @@ on:
         options:
         - Secuencial
         - parallel
-      browsertype:
-        description: 'Browser type'
-        required: true
-        default: 'warning'
+        
+      environment:
+        description: 'Environment to run tests against'
         type: environment
+        required: true
 
       language:
         description: 'Language used to test against'
@@ -52,7 +52,7 @@ jobs:
           TAG: ${{ inputs.filter }}
           TESTTYPE: ${{ inputs.testtype }}
           LANG: ${{ inputs.language }}
-          BROWSERTYPE: ${{ inputs.browsertype }}
+          ENVIRONMENT: ${{ inputs.environment }}
 
     - uses: actions/upload-artifact@v3
       with:
