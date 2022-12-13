@@ -4,33 +4,34 @@ name: Workflow Web Manual
 on:
   workflow_dispatch:
     inputs:
-      #test_tag:
-       # description: 'Tag del test'
-        #required: true
-       # default: 'warning'
-       # type: choice
-       # options:
-       # - '@Smoke'
-       # - '@Success'
-        
       test_tag:
         description: 'Tag del test'
         required: true
-        default: '@Smoke'
+        default: 'warning'
+        type: choice
+        options:
+        - '@Smoke'
+        - '@Success'
+        - '@regression' 
         
-      #test_type:
-       # description: 'Tipo de test'
-       # required: true
-       # default: 'warning'
-       # type: choice
-       # options:
-       # - parallel
-       # - Secuencial
+      #test_tag:
+      #  description: 'Tag del test'
+      #  required: true
+      #  default: '@Smoke'
         
       test_type:
         description: 'Tipo de test'
         required: true
-        default: 'parallel'
+        default: 'warning'
+        type: choice
+        options:
+        - parallel
+        - Secuencial
+        
+      #test_type:
+      #  description: 'Tipo de test'
+      #  required: true
+      #  default: 'parallel'
         
       browser_type:
         description: 'Tipo de Browser'
