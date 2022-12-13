@@ -73,8 +73,8 @@ y Workflow Web Manual.yml en "rules", los valores de dichas variables se encuent
 ```
 $ mvn clean test
 ```
-En caso de agregar o modificar variables de entorno realizar los cambios necesarios en el script del test en los archivos YAML
+* En caso de agregar o modificar variables de entorno realizar los cambios necesarios en el script del test en los archivos YAML
 
 ### Los reportes son generados en una carpeta llamada **Target**, que sera generada una vez que la ejecucion de las pruebas haya finalizado.
 
-**para mas informacion ver documentacion lippia.**
+**para mas informacion ver [documentacion lippia.](https://github.com/Crowdar/lippia-web-sample-project#getting-started "documentacion lippia.")**
