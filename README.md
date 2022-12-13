@@ -37,9 +37,9 @@ y Workflow Web Manual.yml en "rules", los valores de dichas variables se encuent
   * **BROWSERTYPE**: determina el perfil de buscador que se usara, para mas informacion ver documentacion lippia 
   * **LANG**: determina el idioma
   
-  En el pipeline manual las primeras dos variables despliegan una lista antes de disparar el workflow, puede agregar mas opciones en el YAML, por ejemplo:
+* En el pipeline manual las primeras dos variables despliegan una lista antes de disparar el workflow, puede agregar mas opciones en el YAML, por ejemplo:
   ```
- * test_tag:
+  test_tag:
         description: 'Tag del test'
         required: true
         default: 'warning'
