@@ -51,14 +51,14 @@ y Workflow Web Manual.yml en "rules", los valores de dichas variables se encuent
 ```
  ### Este bloque de version lista se comenta ###
   # test_tag:
-    #    description: 'Tag del test'
-      #  required: true
-        #default: 'warning'
-        #type: choice
-        #options:
-       # - '@Smoke'
-       # - '@Success'
-       # - '@regression'
+  #      description: 'Tag del test'
+  #      required: true
+  #      default: 'warning'
+  #      type: choice
+  #      options:
+  #      - '@Smoke'
+  #      - '@Success'
+  #      - '@regression'
 
 ### Y le sacamos los '#' ala version modificable para activarla ###
 
