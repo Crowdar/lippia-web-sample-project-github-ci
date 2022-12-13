@@ -39,7 +39,7 @@ y Workflow Web Manual.yml en "rules", los valores de dichas variables se encuent
   
   En el pipeline manual las primeras dos variables despliegan una lista antes de disparar el workflow, puede agregar mas opciones en el YAML, por ejemplo:
   ```
-  test_tag:
+ * test_tag:
         description: 'Tag del test'
         required: true
         default: 'warning'
