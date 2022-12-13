@@ -46,6 +46,7 @@ y Workflow Web Manual.yml en "rules", los valores de dichas variables se encuent
         - '@Success'
         - '@regression' #se agrega este test que aparecera en la lista al disparar el pipeline
   ```
+  ![Env-list](docs/images/Env-list.png)
 * Adicionalmente tiene la opcion de cambiar la forma de lista por variables modificables, para ello quite el comentario del bloque correspondiente a la variable y recuerde comentar la version de lista, por ejemplo:
  
 ```
@@ -67,6 +68,7 @@ y Workflow Web Manual.yml en "rules", los valores de dichas variables se encuent
         required: true
         default: '@Smoke'
 ```
+![Env-mod](docs/images/Env-mod.png)
 **NOTA:  el pipeline permite modificar o agregar mas variables de entorno dentro del apartado "env"**
 
 * para realizar las pruebas utilizamos el comando: 
