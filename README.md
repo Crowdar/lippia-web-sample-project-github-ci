@@ -69,6 +69,7 @@ y Workflow Web Manual.yml en "rules", los valores de dichas variables se encuent
         default: '@Smoke'
 ```
 ![Env-mod](docs/images/Env-mod.png)
+
 **NOTA:  el pipeline permite modificar o agregar mas variables de entorno dentro del apartado "env"**
 
 * para realizar las pruebas utilizamos el comando: 
