@@ -1,5 +1,4 @@
 # Pipeline Sample WEB
-
  Es un proyecto que tiene como finalidad automatizar el testeo del codigo ingresado al repositorio, utilizando el framework Lippia.
 
 # Comenzando
@@ -7,7 +6,6 @@ Este pipeline tiene el proposito de testear de manera practica un repositorio ut
 Este proyecto de pipeline incluye la imagen de Lippia con todas las herramientas necesarias para los tests.
 
 ## Como se usa
----
 * Un nuevo commit en el repositorio dispara el pipeline, iniciando las pruebas pertinentes. En el caso del pipeline manual este debe ser disparado manualmente.
 Por defecto el pipeline automatico esta configurado para dispararse cuando se realiza un commit al branch master o main, esto puede ser modificado en el archivo YAML.
 algunos ejemplos:
@@ -24,8 +22,7 @@ on:
       - '!master'   # excluye la rama master
 ```
 
-Este pipeline trabaja con la version de lippia 3.1.2.2.
-+ en caso de querer modificarla utilizar una imagen desde el siguiente link
+* Este pipeline trabaja con la version de lippia 3.1.2.2, en caso de querer modificarla utilizar una imagen desde el siguiente link
 
 >https://hub.docker.com/r/crowdar/lippia/tags
 
