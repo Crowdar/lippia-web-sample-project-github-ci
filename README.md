@@ -78,6 +78,6 @@ $ mvn clean test
 ```
 En caso de agregar o modificar variables de entorno realizar los cambios necesarios en el script del test en los archivos YAML
 
-###Los reportes son generados en una carpeta llamada **Target**, que sera generada una vez que la ejecucion de las pruebas haya finalizado.
+### Los reportes son generados en una carpeta llamada **Target**, que sera generada una vez que la ejecucion de las pruebas haya finalizado.
 
 **para mas informacion ver documentacion lippia.**
