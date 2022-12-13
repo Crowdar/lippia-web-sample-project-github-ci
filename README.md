@@ -44,7 +44,7 @@ y Workflow Web Manual.yml en "rules", los valores de dichas variables se encuent
         options:
         - '@Smoke'
         - '@Success'
-		-'@regression' #se agrega este test que aparecera en la lista al disparar el pipeline
+        - '@regression' #se agrega este test que aparecera en la lista al disparar el pipeline
   ```
 * Adicionalmente tiene la opcion de cambiar la forma de lista por variables modificables, para ello quite el comentario del bloque correspondiente a la variable y recuerde comentar la version de lista, por ejemplo:
  
@@ -58,14 +58,14 @@ y Workflow Web Manual.yml en "rules", los valores de dichas variables se encuent
         #options:
        # - '@Smoke'
        # - '@Success'
-       # -'@regression'
+       # - '@regression'
 
 ### Y le sacamos los '#' ala version modificable para activarla ###
 
- browser_type:
-        description: 'Tipo de Browser'
+ test_tag::
+        description: 'Tag del test'
         required: true
-        default: 'chromeHeadless'
+        default: '@Smoke'
 ```
 **NOTA:  el pipeline permite modificar o agregar mas variables de entorno dentro del apartado "env"**
 
