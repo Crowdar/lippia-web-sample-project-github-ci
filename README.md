@@ -1,9 +1,10 @@
 # Pipeline Sample WEB
  Es un proyecto que tiene como finalidad automatizar el testeo del codigo ingresado al repositorio, utilizando el framework Lippia.
 
-# Comenzando
-Este pipeline tiene el proposito de testear de manera practica un repositorio utilizando el Framework Lippia.
-Este proyecto de pipeline incluye la imagen de Lippia con todas las herramientas necesarias para los tests.
+## Consideraciones
+El proyecto incluye la imagen de Lippia con todas las herramientas necesarias para los tests. En la carpeta .github/workflows se encuentran dos archivos de automatización de pipelines que se ejecutan segun donde se haga el commit o el merge:
+- Cuando el commit se realiza a main o master el test se ejecuta automaticamente con el archivo Workflow Web Auto.yml 
+- Cuando el commit se realiza a otro branch el test se debe ejecutar manualmente, corriendo el archivo Workflow Web Manual.yml
 
 ## Como se usa
 * Un nuevo commit en el repositorio dispara el pipeline, iniciando las pruebas pertinentes. En el caso del pipeline manual este debe ser disparado manualmente.
