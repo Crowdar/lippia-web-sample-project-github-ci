@@ -29,7 +29,7 @@ on:
 
 
 - Antes de disparar el pipeline se deben configurar las siguientes variables de entorno dentro en los archivos .Workflow Web Auto.yml
-y Workflow Web Manual.yml en "rules", los valores de dichas variables se encuentran en el archivo POM.xml:
+y Workflow Web Manual.yml en "jobs: testing: env:", los valores de dichas variables se encuentran en el archivo POM.xml
   * **TAG**: lleva el nombre de la prueba
   * **TESTTYPE**:  determina el tipo de pruebas a realizar
   * **BROWSERTYPE**: determina el perfil de buscador que se usara, para mas informacion ver documentacion lippia 
