@@ -80,5 +80,7 @@ $ mvn clean test
 * En caso de agregar o modificar variables de entorno realizar los cambios necesarios en el script del test en los archivos YAML
 
 ### Los reportes son generados en una carpeta llamada **Target**, que sera generada una vez que la ejecucion de las pruebas haya finalizado.
+* El artifact se encuentra para descargar en actions, dentro del workflow terminado, en la zona inferior de la pagina.
+![Artifact](docs/images/Artifact.png)
 
 **para mas informacion ver [documentacion lippia.](https://github.com/Crowdar/lippia-web-sample-project#getting-started "documentacion lippia.")**
