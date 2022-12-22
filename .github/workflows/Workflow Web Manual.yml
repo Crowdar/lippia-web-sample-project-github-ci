@@ -61,7 +61,8 @@ jobs:
                 $LANG,
                 $BROWSERTYPE
     - name: Realizando Pruebas
-      run: mvn clean test -P$TESTTYPE -P$BROWSERTYPE -Dcucumber.tags="--tags $TAG"
+      continue-on-error: true
+      run: mvn clean test -P$TESTTYPE -P$BROWSERTYPE -Dcucumber.tags="--tags $TAG" -Dcrowdar.cucumber.filter.language="'$LANG'"
        
     - name: Subiendo informe
       uses: actions/upload-artifact@v3
