@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     container: crowdar/lippia:3.1.2.2
     env: 
-      TAG: "@Smoke"
+      TAG: "@login"
       TESTTYPE: "parallel"
       LANG: "@EN"
       BROWSERTYPE: "chromeHeadless"
@@ -23,6 +23,7 @@ jobs:
                 "LANG= "$LANG,
                 "BROWSERTYPE= "$BROWSERTYPE
     - name: Realizando Pruebas
+      continue-on-error: true
       run: mvn clean test -P$TESTTYPE -P$BROWSERTYPE -Dcucumber.tags="--tags $TAG"
     - name: Subiendo informe
       uses: actions/upload-artifact@v3
