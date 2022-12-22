@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     container: crowdar/lippia:3.1.2.2
     env: 
-      TAG: "@login"
-      TESTTYPE: "parallel"
+      TAG: "@Smokes"
+      TESTTYPE: "parallels"
       LANG: "@EN"
       BROWSERTYPE: "chromeHeadless"
     
