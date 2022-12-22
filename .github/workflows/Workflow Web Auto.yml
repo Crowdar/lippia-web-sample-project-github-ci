@@ -23,10 +23,9 @@ jobs:
                 "LANG= "$LANG,
                 "BROWSERTYPE= "$BROWSERTYPE
     - name: Realizando Pruebas
-      continue-on-error: true
       run: mvn clean test -P$TESTTYPE -P$BROWSERTYPE -Dcucumber.tags="--tags $TAG"
     - run: ls && cd target && ls -a
     - name: Subiendo informe
       uses: actions/upload-artifact@v3
       with:
-        path: target/reports/
+        path: target/report/
