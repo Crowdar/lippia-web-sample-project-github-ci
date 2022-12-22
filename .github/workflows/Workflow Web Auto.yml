@@ -11,7 +11,7 @@ jobs:
     container: crowdar/lippia:3.1.2.2
     env: 
       TAG: "@Smokes"
-      TESTTYPE: "parallel"
+      TESTTYPE: "parallels"
       LANG: "@EN"
       BROWSERTYPE: "chromeHeadless"
     
