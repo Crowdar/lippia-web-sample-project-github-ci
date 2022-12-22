@@ -28,4 +28,4 @@ jobs:
     - name: Subiendo informe
       uses: actions/upload-artifact@v3
       with:
-        path: target/report/
+        path: target/reports/
