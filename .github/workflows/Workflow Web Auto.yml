@@ -24,6 +24,7 @@ jobs:
                 "BROWSERTYPE= "$BROWSERTYPE
     - name: Realizando Pruebas
       run: mvn clean test -P$TESTTYPE -P$BROWSERTYPE -Dcucumber.tags="--tags $TAG"
+      continue-on-error: true
     - run: ls && cd target && ls -a
     - name: Subiendo informe
       uses: actions/upload-artifact@v3
