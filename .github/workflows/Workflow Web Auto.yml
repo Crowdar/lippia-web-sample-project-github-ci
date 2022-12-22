@@ -25,7 +25,7 @@ jobs:
     - name: Realizando Pruebas
       continue-on-error: true
       run: mvn clean test -P$TESTTYPE -P$BROWSERTYPE -Dcucumber.tags="--tags $TAG"
-    - run: ls
+    - run: ls && cd target && ls -a
     - name: Subiendo informe
       uses: actions/upload-artifact@v3
       with:
